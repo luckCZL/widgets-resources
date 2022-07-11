@@ -1,0 +1,16 @@
+/*
+Place your custom CSS here
+*/
+
+.rating-icon + span {
+    margin-left: 8px;
+}
+
+.text-inherit {
+    color: inherit;
+}
+
+.text-inherit:focus {
+    outline: none;
+    text-decoration: none;
+}
