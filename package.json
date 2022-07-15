@@ -84,7 +84,8 @@
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.0",
     "recursive-copy": "^2.0.11",
-    "ts-node": "^9.0.0"
+    "ts-node": "^9.0.0",
+    "antd": "^4.16.3"
   },
   "commitlint": {
     "extends": [
@@ -102,5 +103,8 @@
     "react-native": {
       "use-subscription": "1.5.1"
     }
+  },
+  "dependencies": {
+    "@jeltemx/mendix-react-widget-utils": "^0.9.0"
   }
 }

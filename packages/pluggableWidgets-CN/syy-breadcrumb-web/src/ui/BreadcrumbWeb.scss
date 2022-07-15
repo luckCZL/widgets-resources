@@ -1,0 +1,42 @@
+.ant-breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ant-breadcrumb a {
+    color: #00000073;
+    transition: color 0.3s;
+}
+
+.ant-breadcrumb a:hover {
+    color: #000000d9;
+}
+
+.ant-breadcrumb li:last-child {
+    color: #000000d9;
+}
+
+.ant-breadcrumb li:last-child a {
+    color: #000000d9;
+}
+
+li:last-child > .ant-breadcrumb-separator {
+    display: none;
+}
+
+.ant-breadcrumb-separator {
+    margin: 0 8px;
+    color: #00000073;
+}
+
+.ant-breadcrumb-link > .anticon + span,
+.ant-breadcrumb-link > .anticon + a {
+    margin-left: 4px;
+}
+
+.ant-breadcrumb-overlay-link > .anticon {
+    margin-left: 4px;
+}

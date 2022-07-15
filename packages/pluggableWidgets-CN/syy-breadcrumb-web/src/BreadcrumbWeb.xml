@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="runjian.breadcrumbweb.BreadcrumbWeb" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>SYY Breadcrumb Web</name>
+    <description>Display the position of the current page in the system hierarchy and return upward</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <property key="staticData" type="object" isList="true" required="false">
+                <caption>Data</caption>
+                <description />
+                <properties>
+                    <propertyGroup caption="Object list group">
+                        <property key="staticLabel" type="string" required="false">
+                            <caption>Label</caption>
+                            <description />
+                        </property>
+                        <property key="staticIcon" type="string" required="false">
+                            <caption>Icon</caption>
+                            <description>Antd icon</description>
+                        </property>
+                        <property key="staticPath" type="string" required="false">
+                            <caption>Path</caption>
+                            <description />
+                        </property>
+                        <property key="onClick" type="action">
+                            <caption>On click</caption>
+                            <description>Will override jump</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Config">
+            <property key="isJump" type="boolean" defaultValue="false">
+                <caption>Is jump page</caption>
+                <description>Need to configure path</description>
+            </property>
+            <property key="separator" type="string" defaultValue="/">
+                <caption>separator</caption>
+                <description />
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
