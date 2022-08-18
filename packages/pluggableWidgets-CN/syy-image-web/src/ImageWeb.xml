@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="runjian.imageweb.ImageWeb" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>SYY Image Web</name>
+    <description />
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <systemProperty key="Label" />
+            <property key="dataType" type="enumeration" defaultValue="Url">
+                <caption>Image type</caption>
+                <description />
+                <enumerationValues>
+                    <enumerationValue key="typeStatic">Static</enumerationValue>
+                    <enumerationValue key="typeUrl">Url address</enumerationValue>
+                    <enumerationValue key="typeList">Photo collection</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="staticImage" type="image" required="false">
+                <caption>Static image</caption>
+                <description />
+            </property>
+            <property key="singUrl" type="textTemplate" required="false">
+                <caption>单图url链接</caption>
+                <description />
+            </property>
+            <property key="listData" type="datasource" isList="true" required="false">
+                <caption>列表数据</caption>
+                <description />
+            </property>
+            <property key="text" type="attribute" dataSource="listData" required="false">
+                <caption>描述文字</caption>
+                <description />
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="showEmpty" type="boolean" defaultValue="false">
+                <caption>是否显示缺省页</caption>
+                <description>图片数组为空时有效</description>
+            </property>
+            <property key="description" type="string" required="false">
+                <caption>缺省页文字</caption>
+                <description />
+            </property>
+            <property key="preview" type="boolean" defaultValue="true">
+                <caption>是否点击可预览大图</caption>
+                <description />
+            </property>
+            <property key="colNumber" type="integer" defaultValue="0">
+                <caption>列数</caption>
+                <description>为0则以下面宽度为准</description>
+            </property>
+            <property key="width" type="integer" defaultValue="200">
+                <caption>图片宽度</caption>
+                <description>列数为0时此设置才生效</description>
+            </property>
+            <property key="height" type="integer" defaultValue="300">
+                <caption>图片高度</caption>
+                <description />
+            </property>
+            <property key="margin" type="integer" defaultValue="32">
+                <caption>间距</caption>
+                <description />
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

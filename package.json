@@ -102,5 +102,8 @@
     "react-native": {
       "use-subscription": "1.5.1"
     }
+  },
+  "dependencies": {
+    "@jeltemx/mendix-react-widget-utils": "^0.9.0"
   }
 }

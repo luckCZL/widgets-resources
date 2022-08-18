@@ -1,0 +1,23 @@
+/*
+Place your custom CSS here
+*/
+
+.rating-icon + span {
+    margin-left: 8px;
+}
+
+.syy-image-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-items: flex-start;
+
+    .ant-image {
+        display: block;
+    }
+
+    .ant-empty-normal {
+        margin: 32px auto;
+    }
+}
