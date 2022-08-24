@@ -1,11 +1,12 @@
-import { ReactNode, createElement, useEffect, useState } from "react";
-import { Breadcrumb } from "antd";
+import { ReactNode, createElement, useEffect, useState, ReactElement } from "react";
+// import { Breadcrumb } from "antd";
 import { BreadcrumbWebContainerProps } from "../typings/BreadcrumbWebProps";
 import * as icons from "@ant-design/icons";
 import { executeAction } from "@mendix/piw-utils-internal";
 import { ActionValue } from "mendix";
 import { openPage } from "@jeltemx/mendix-react-widget-utils";
 import "./ui/BreadcrumbWeb.scss";
+import { BreadcrumbCom } from "./components/Breadcrumb";
 
 export interface ContentInterface {
     id: string;
@@ -16,7 +17,7 @@ export interface ContentInterface {
     onClick?: ActionValue;
 }
 
-export function BreadcrumbWeb(props: BreadcrumbWebContainerProps): ReactNode {
+export function BreadcrumbWeb(props: BreadcrumbWebContainerProps): ReactElement {
     const { staticData, style, separator, isJump } = props;
     const [data, setStata] = useState<ContentInterface[]>([]);
 
@@ -76,7 +77,6 @@ export function BreadcrumbWeb(props: BreadcrumbWebContainerProps): ReactNode {
         // 点击事件
         if (item.onClick) {
             executeAction(item.onClick);
-            // eslint-disable-next-line no-useless-return
             return;
         }
 
@@ -94,15 +94,25 @@ export function BreadcrumbWeb(props: BreadcrumbWebContainerProps): ReactNode {
     };
 
     return data.length ? (
-        <Breadcrumb style={style} className={props.class} separator={separator}>
-            {data.map(item => {
-                return (
-                    <Breadcrumb.Item key={item.id} onClick={() => handClick(item)}>
-                        {item.icon && handleIcon(item.icon)}
-                        <a href="javascript:;">{item.title}</a>
-                    </Breadcrumb.Item>
-                );
-            })}
-        </Breadcrumb>
-    ) : null;
+        // <Breadcrumb style={style} className={props.class} separator={separator}>
+        //     {data.map(item => {
+        //         return (
+        //             <Breadcrumb.Item key={item.id} onClick={() => handClick(item)}>
+        //                 {item.icon && handleIcon(item.icon)}
+        //                 <a href="javascript:;">{item.title}</a>
+        //             </Breadcrumb.Item>
+        //         );
+        //     })}
+        // </Breadcrumb>
+        <BreadcrumbCom
+            style={style}
+            className={props.class}
+            separator={separator}
+            data={data}
+            handClick={handClick}
+            handleIcon={handleIcon}
+        />
+    ) : (
+        <div></div>
+    );
 }

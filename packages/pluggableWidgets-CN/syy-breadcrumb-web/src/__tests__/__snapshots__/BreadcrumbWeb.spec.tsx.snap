@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbWeb renders a default data 1`] = `
+<nav
+  className="ant-breadcrumb BreadcrumbWebTest"
+>
+  <ol />
+</nav>
+`;
+
+exports[`BreadcrumbWeb renders a default separator 1`] = `
+<nav
+  className="ant-breadcrumb BreadcrumbWebTest"
+>
+  <ol>
+    <li>
+      <span
+        className="ant-breadcrumb-link"
+        onClick={[Function]}
+      >
+        <a
+          href="javascript:;"
+        >
+          一级菜单
+        </a>
+      </span>
+      <span
+        className="ant-breadcrumb-separator"
+      >
+        :
+      </span>
+    </li>
+    <li>
+      <span
+        className="ant-breadcrumb-link"
+        onClick={[Function]}
+      >
+        <a
+          href="javascript:;"
+        >
+          二级菜单
+        </a>
+      </span>
+      <span
+        className="ant-breadcrumb-separator"
+      >
+        :
+      </span>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`BreadcrumbWeb renders as a breadcrumb 1`] = `
+<nav
+  className="ant-breadcrumb BreadcrumbWebTest"
+>
+  <ol>
+    <li>
+      <span
+        className="ant-breadcrumb-link"
+        onClick={[Function]}
+      >
+        <a
+          href="javascript:;"
+        >
+          一级菜单
+        </a>
+      </span>
+      <span
+        className="ant-breadcrumb-separator"
+      >
+        -
+      </span>
+    </li>
+    <li>
+      <span
+        className="ant-breadcrumb-link"
+        onClick={[Function]}
+      >
+        <a
+          href="javascript:;"
+        >
+          二级菜单
+        </a>
+      </span>
+      <span
+        className="ant-breadcrumb-separator"
+      >
+        -
+      </span>
+    </li>
+  </ol>
+</nav>
+`;
