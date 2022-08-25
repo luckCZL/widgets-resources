@@ -9,7 +9,7 @@
     "node": ">=12"
   },
   "config": {
-    "projectPath": "E:\\rjgf\\electricsafety\\branches\\dev_czl",
+    "projectPath": "E:\\rjgf\\mendix-e2e\\syy-breadcrumb-web",
     "mendixHost": "http://localhost:8080",
     "developmentPort": "3000"
   },
@@ -25,7 +25,9 @@
     "lint": "..\"/../../node_modules/.bin/eslint\" --config ../../../.eslintrc.js --ext .jsx,.js,.ts,.tsx src/",
     "pretest:e2e": "node ../../../scripts/test/updateAtlas.js --latest-atlas",
     "release": "cross-env pluggable-widgets-tools release:web",
-    "test": "pluggable-widgets-tools test:unit:web"
+    "test": "pluggable-widgets-tools test:unit:web",
+    "test:e2e": "pluggable-widgets-tools test:e2e:web:cypress",
+    "test:e2e:local": "npx cypress open --config-file=../../../configs/e2e/cypress/cypress.config.ts"
   },
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": ">=8.9.2",

@@ -1,95 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BreadcrumbWeb renders a default data 1`] = `
-<nav
-  className="ant-breadcrumb BreadcrumbWebTest"
->
-  <ol />
-</nav>
+<Breadcrumb
+  className="BreadcrumbWebTest"
+  separator="-"
+/>
 `;
 
 exports[`BreadcrumbWeb renders a default separator 1`] = `
-<nav
-  className="ant-breadcrumb BreadcrumbWebTest"
+<Breadcrumb
+  className="BreadcrumbWebTest"
+  separator=":"
 >
-  <ol>
-    <li>
-      <span
-        className="ant-breadcrumb-link"
-        onClick={[Function]}
-      >
-        <a
-          href="javascript:;"
-        >
-          一级菜单
-        </a>
-      </span>
-      <span
-        className="ant-breadcrumb-separator"
-      >
-        :
-      </span>
-    </li>
-    <li>
-      <span
-        className="ant-breadcrumb-link"
-        onClick={[Function]}
-      >
-        <a
-          href="javascript:;"
-        >
-          二级菜单
-        </a>
-      </span>
-      <span
-        className="ant-breadcrumb-separator"
-      >
-        :
-      </span>
-    </li>
-  </ol>
-</nav>
+  <BreadcrumbItem
+    key="1"
+    onClick={[Function]}
+  >
+    <a
+      href="javascript:;"
+    >
+      一级菜单
+    </a>
+  </BreadcrumbItem>
+  <BreadcrumbItem
+    key="2"
+    onClick={[Function]}
+  >
+    <a
+      href="javascript:;"
+    >
+      二级菜单
+    </a>
+  </BreadcrumbItem>
+</Breadcrumb>
 `;
 
 exports[`BreadcrumbWeb renders as a breadcrumb 1`] = `
-<nav
-  className="ant-breadcrumb BreadcrumbWebTest"
+<Breadcrumb
+  className="BreadcrumbWebTest"
+  separator="-"
 >
-  <ol>
-    <li>
-      <span
-        className="ant-breadcrumb-link"
-        onClick={[Function]}
-      >
-        <a
-          href="javascript:;"
-        >
-          一级菜单
-        </a>
-      </span>
-      <span
-        className="ant-breadcrumb-separator"
-      >
-        -
-      </span>
-    </li>
-    <li>
-      <span
-        className="ant-breadcrumb-link"
-        onClick={[Function]}
-      >
-        <a
-          href="javascript:;"
-        >
-          二级菜单
-        </a>
-      </span>
-      <span
-        className="ant-breadcrumb-separator"
-      >
-        -
-      </span>
-    </li>
-  </ol>
-</nav>
+  <BreadcrumbItem
+    key="1"
+    onClick={[Function]}
+  >
+    <a
+      href="javascript:;"
+    >
+      一级菜单
+    </a>
+  </BreadcrumbItem>
+  <BreadcrumbItem
+    key="2"
+    onClick={[Function]}
+  >
+    <a
+      href="javascript:;"
+    >
+      二级菜单
+    </a>
+  </BreadcrumbItem>
+</Breadcrumb>
 `;

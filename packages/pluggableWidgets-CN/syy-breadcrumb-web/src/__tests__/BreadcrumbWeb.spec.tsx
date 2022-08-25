@@ -1,5 +1,6 @@
 import { createElement } from "react";
-import { render } from "@testing-library/react-native";
+// import { render } from "@testing-library/react-native";
+import { shallow } from "enzyme";
 // import { mount, ReactWrapper, shallow, ShallowWrapper } from "enzyme";
 import { BreadcrumbCom, BreadcrumbProps } from "../components/Breadcrumb";
 // import { BreadcrumbWebContainerProps } from "../../typings/BreadcrumbWebProps";
@@ -34,17 +35,27 @@ describe("BreadcrumbWeb", () => {
     });
 
     it("renders as a breadcrumb", () => {
-        const breadcrumb = render(<BreadcrumbCom {...defaultProps} />);
+        const breadcrumb = shallow(<BreadcrumbCom {...defaultProps} />);
         expect(breadcrumb).toMatchSnapshot();
     });
 
     it("renders a default separator", () => {
-        const breadcrumb = render(<BreadcrumbCom {...defaultProps} separator=":" />);
+        const breadcrumb = shallow(<BreadcrumbCom {...defaultProps} separator=":" />);
         expect(breadcrumb).toMatchSnapshot();
     });
 
     it("renders a default data", () => {
-        const breadcrumb = render(<BreadcrumbCom {...defaultProps} data={[]} />);
+        const breadcrumb = shallow(<BreadcrumbCom {...defaultProps} data={[]} />);
         expect(breadcrumb).toMatchSnapshot();
     });
+
+    // it("triggers handClick function with a click event", () => {
+    //     defaultProps.handClick = jest.fn();
+    //     // const onClick = jest.fn();
+    //     const breadcrumb = mount(<BreadcrumbCom {...defaultProps} handClick={defaultProps.handClick} />);
+
+    //     breadcrumb.find("BreadcrumbItem").simulate("click");
+
+    //     expect(defaultProps.handClick).toHaveBeenCalledTimes(1);
+    // });
 });
