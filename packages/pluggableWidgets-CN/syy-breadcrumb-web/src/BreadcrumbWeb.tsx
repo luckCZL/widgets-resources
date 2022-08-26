@@ -73,7 +73,8 @@ export function BreadcrumbWeb(props: BreadcrumbWebContainerProps): ReactElement 
      * 处理点击事件
      * @param item
      */
-    const handClick = (item: ContentInterface): void | null => {
+    const onClick = (item: ContentInterface): void | null => {
+        console.info("item.onClick", item);
         // 点击事件
         if (item.onClick) {
             executeAction(item.onClick);
@@ -109,7 +110,7 @@ export function BreadcrumbWeb(props: BreadcrumbWebContainerProps): ReactElement 
             className={props.class}
             separator={separator}
             data={data}
-            handClick={handClick}
+            onClick={onClick}
             handleIcon={handleIcon}
         />
     ) : (

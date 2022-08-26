@@ -20,7 +20,7 @@
                         </property>
                         <property key="staticPath" type="string" required="false">
                             <caption>Path</caption>
-                            <description />
+                            <description>{ModuleName}/{PageName}</description>
                         </property>
                         <property key="onClick" type="action">
                             <caption>On click</caption>

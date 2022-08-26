@@ -27,7 +27,7 @@
     "release": "cross-env pluggable-widgets-tools release:web",
     "test": "pluggable-widgets-tools test:unit:web",
     "test:e2e": "pluggable-widgets-tools test:e2e:web:cypress",
-    "test:e2e:local": "npx cypress open --config-file=../../../configs/e2e/cypress/cypress.config.ts"
+    "test:e2e:local": "npx cypress@9.6.1 open --browser chrome --config-file ../../../configs/e2e/cypress/cypress.json"
   },
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": ">=8.9.2",

@@ -1,6 +1,6 @@
 import { createElement } from "react";
 // import { render } from "@testing-library/react-native";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 // import { mount, ReactWrapper, shallow, ShallowWrapper } from "enzyme";
 import { BreadcrumbCom, BreadcrumbProps } from "../components/Breadcrumb";
 // import { BreadcrumbWebContainerProps } from "../../typings/BreadcrumbWebProps";
@@ -29,7 +29,7 @@ describe("BreadcrumbWeb", () => {
                 }
             ],
             separator: "-",
-            handClick: jest.fn(),
+            onClick: jest.fn(),
             handleIcon: jest.fn()
         };
     });
@@ -50,12 +50,15 @@ describe("BreadcrumbWeb", () => {
     });
 
     // it("triggers handClick function with a click event", () => {
-    //     defaultProps.handClick = jest.fn();
+    //     defaultProps.onClick = jest.fn();
     //     // const onClick = jest.fn();
-    //     const breadcrumb = mount(<BreadcrumbCom {...defaultProps} handClick={defaultProps.handClick} />);
+    //     const breadcrumb = mount(<BreadcrumbCom {...defaultProps} className="breadcrumb-onclick" />);
+
+    //     console.info("111", breadcrumb);
+    //     console.info("222", breadcrumb.find("BreadcrumbItem"));
 
     //     breadcrumb.find("BreadcrumbItem").simulate("click");
 
-    //     expect(defaultProps.handClick).toHaveBeenCalledTimes(1);
+    //     expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
     // });
 });

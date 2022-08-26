@@ -7,18 +7,18 @@ export interface BreadcrumbProps {
     separator: string;
     style?: React.CSSProperties | undefined;
     data: ContentInterface[];
-    handClick: (item: ContentInterface) => void;
+    onClick: (item: ContentInterface) => void;
     handleIcon: (icon: string) => void;
 }
 
 export function BreadcrumbCom(props: BreadcrumbProps): ReactElement {
-    const { className, separator, style, data, handClick, handleIcon } = props;
+    const { className, separator, style, data, onClick, handleIcon } = props;
 
     return (
         <Breadcrumb style={style} className={className} separator={separator}>
             {data.map(item => {
                 return (
-                    <Breadcrumb.Item key={item.id} onClick={() => handClick(item)}>
+                    <Breadcrumb.Item key={item.id} onClick={() => onClick(item)}>
                         {item.icon && handleIcon(item.icon)}
                         <a href="javascript:;">{item.title}</a>
                     </Breadcrumb.Item>

@@ -1,5 +1,6 @@
 import { BreadcrumbWebPreviewProps } from "../typings/BreadcrumbWebProps";
-import { Properties, StructurePreviewProps, transformGroupsIntoTabs } from "@mendix/piw-utils-internal";
+import { StructurePreviewProps } from "@mendix/piw-utils-internal";
+import { Properties, transformGroupsIntoTabs } from "@mendix/pluggable-widgets-tools";
 
 export function getProperties(
     _values: BreadcrumbWebPreviewProps,
