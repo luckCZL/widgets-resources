@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbWeb placement topRight of dropdown 1`] = `
+<Dropdown
+  arrow={false}
+  mouseEnterDelay={0.15}
+  mouseLeaveDelay={0.1}
+  overlay={[MockFunction]}
+  placement="topRight"
+  trigger={
+    Array [
+      "hover",
+    ]
+  }
+/>
+`;
+
+exports[`BreadcrumbWeb render custom children of dropdown 1`] = `
+<Dropdown
+  arrow={false}
+  mouseEnterDelay={0.15}
+  mouseLeaveDelay={0.1}
+  overlay={[MockFunction]}
+  placement="bottomCenter"
+  trigger={
+    Array [
+      "hover",
+    ]
+  }
+>
+  <div>
+    children
+  </div>
+</Dropdown>
+`;
+
+exports[`BreadcrumbWeb renders default dropdown 1`] = `
+<Dropdown
+  arrow={false}
+  mouseEnterDelay={0.15}
+  mouseLeaveDelay={0.1}
+  overlay={[MockFunction]}
+  placement="bottomCenter"
+  trigger={
+    Array [
+      "hover",
+    ]
+  }
+/>
+`;
+
+exports[`BreadcrumbWeb see the arrow of dropdown 1`] = `
+<Dropdown
+  arrow={true}
+  mouseEnterDelay={0.15}
+  mouseLeaveDelay={0.1}
+  overlay={[MockFunction]}
+  placement="bottomCenter"
+  trigger={
+    Array [
+      "hover",
+    ]
+  }
+/>
+`;
+
+exports[`BreadcrumbWeb trigger click of dropdown 1`] = `
+<Dropdown
+  arrow={false}
+  mouseEnterDelay={0.15}
+  mouseLeaveDelay={0.1}
+  overlay={[MockFunction]}
+  placement="bottomCenter"
+  trigger={
+    Array [
+      "click",
+    ]
+  }
+/>
+`;

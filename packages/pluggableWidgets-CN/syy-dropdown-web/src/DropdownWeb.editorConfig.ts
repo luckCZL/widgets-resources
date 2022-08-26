@@ -1,6 +1,6 @@
 import { DropdownWebPreviewProps } from "../typings/DropdownWebProps";
 
-import { hidePropertiesIn, hidePropertyIn, Properties, transformGroupsIntoTabs } from "@mendix/piw-utils-internal";
+import { hidePropertiesIn, hidePropertyIn, Properties, transformGroupsIntoTabs } from "@mendix/pluggable-widgets-tools";
 
 export function getProperties(
     values: DropdownWebPreviewProps,

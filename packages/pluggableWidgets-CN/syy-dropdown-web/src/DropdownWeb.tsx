@@ -1,5 +1,7 @@
 import { ReactNode, createElement, useEffect, useState, useRef } from "react";
-import { Dropdown, Menu } from "antd";
+// import { Dropdown, Menu } from "antd";
+import Dropdown from "./components/Dropdown";
+import Menu from "antd/es/Menu";
 import { DropdownWebContainerProps } from "../typings/DropdownWebProps";
 import "./ui/DropdownWeb.scss";
 import { ListValue, ActionValue } from "mendix";
@@ -160,7 +162,7 @@ export function DropdownWeb(props: DropdownWebContainerProps): ReactNode {
 
     return (
         <span className={props.class} style={{ display: "inline-block", ...style }} tabIndex={tabIndex}>
-            <Dropdown overlay={handleDom} trigger={[trigger]} placement={placement} arrow={arrow}>
+            <Dropdown overlay={handleDom} trigger={trigger} placement={placement} arrow={arrow}>
                 <a className="ant-dropdown-link display-block text-inherit" onClick={e => e.preventDefault()}>
                     {content}
                 </a>
