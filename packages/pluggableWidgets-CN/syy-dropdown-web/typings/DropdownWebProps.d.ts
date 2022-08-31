@@ -7,7 +7,7 @@ import { ComponentType, CSSProperties, ReactNode } from "react";
 import { ActionValue, EditableValue, ListValue, ListAttributeValue } from "mendix";
 import { Big } from "big.js";
 
-export type DataTypeEnum = "dynamic" | "static";
+export type DataTypeEnum = "enum" | "dynamic" | "static";
 
 export interface ManualDataType {
     manuaValue: string;
@@ -31,6 +31,7 @@ export interface DropdownWebContainerProps {
     style?: CSSProperties;
     tabIndex?: number;
     dataType: DataTypeEnum;
+    enumData?: EditableValue<string>;
     manualData: ManualDataType[];
     dropdownData?: ListValue;
     id?: ListAttributeValue<string | Big>;
@@ -43,6 +44,7 @@ export interface DropdownWebContainerProps {
     trigger: TriggerEnum;
     placement: PlacementEnum;
     divider: boolean;
+    isFollow: boolean;
     onChange?: ActionValue;
 }
 
@@ -52,6 +54,7 @@ export interface DropdownWebPreviewProps {
     styleObject?: CSSProperties;
     readOnly: boolean;
     dataType: DataTypeEnum;
+    enumData: string;
     manualData: ManualDataPreviewType[];
     dropdownData: {} | { type: string } | null;
     id: string;
@@ -64,5 +67,6 @@ export interface DropdownWebPreviewProps {
     trigger: TriggerEnum;
     placement: PlacementEnum;
     divider: boolean;
+    isFollow: boolean;
     onChange: {} | null;
 }

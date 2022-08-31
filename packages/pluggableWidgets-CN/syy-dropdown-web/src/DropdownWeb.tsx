@@ -1,10 +1,11 @@
 import { ReactNode, createElement, useEffect, useState, useRef } from "react";
 // import { Dropdown, Menu } from "antd";
-import Dropdown from "./components/Dropdown";
+// import Dropdown from "./components/Dropdown";
 import Menu from "antd/es/Menu";
+import Dropdown from "antd/es/dropdown";
 import { DropdownWebContainerProps } from "../typings/DropdownWebProps";
 import "./ui/DropdownWeb.scss";
-import { ListValue, ActionValue } from "mendix";
+import { ListValue, ActionValue, EditableValue } from "mendix";
 import { executeAction } from "@mendix/piw-utils-internal";
 import { updateAttributeValue } from "@mendix/syy-utils-internal";
 
@@ -19,6 +20,7 @@ interface DropdownInterface {
 
 export function DropdownWeb(props: DropdownWebContainerProps): ReactNode {
     const {
+        enumData,
         dropdownData,
         manualData,
         id,
@@ -34,7 +36,8 @@ export function DropdownWeb(props: DropdownWebContainerProps): ReactNode {
         selectedId,
         onChange,
         returnLabel,
-        dataType
+        dataType,
+        isFollow
     } = props;
     const [data, setData] = useState<DropdownInterface[]>([]);
     const isManual = useRef(false); // 是否手动添加的数据
@@ -64,17 +67,51 @@ export function DropdownWeb(props: DropdownWebContainerProps): ReactNode {
 
     // 初始化动态数据
     useEffect(() => {
-        if (dataType === "dynamic" && dropdownData && dropdownData.status === "available") {
-            handleDropdawnData(dropdownData);
+        switch (dataType) {
+            case "dynamic":
+                handleDropdawnData(dropdownData);
+                break;
+
+            case "enum":
+                handleEnumData(enumData);
+                break;
         }
+        // if (dataType === "dynamic" && dropdownData && dropdownData.status === "available") {
+        //     handleDropdawnData(dropdownData);
+        // }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dropdownData]);
 
     /**
-     * 处理数据
+     * 处理枚举数据
+     * @param data 原始枚举类型
+     */
+    const handleEnumData = (data: EditableValue<string> | undefined): void => {
+        if (!data?.universe?.length) {
+            return;
+        }
+
+        const dropdownData: DropdownInterface[] = [];
+        data.universe.forEach((item: any) => {
+            dropdownData.push({
+                id: item,
+                text: data.formatter.format(item),
+                disabled: false
+            });
+        });
+
+        setData(dropdownData);
+    };
+
+    /**
+     * 处理动态数据
      * @param data 原始下拉框类型
      */
-    const handleDropdawnData = (data: ListValue): void => {
+    const handleDropdawnData = (data: ListValue | undefined): void => {
+        if (!data || data?.status !== "available") {
+            return;
+        }
+
         const dropdownData: DropdownInterface[] = [];
 
         if (data.items) {
@@ -150,7 +187,7 @@ export function DropdownWeb(props: DropdownWebContainerProps): ReactNode {
 
     /**
      * 选中回调
-     * @param id 菜单id
+     * @param item
      */
     const onChangeFun = (item: DropdownInterface): void => {
         updateAttributeValue(selectedId, item.id);
@@ -158,11 +195,19 @@ export function DropdownWeb(props: DropdownWebContainerProps): ReactNode {
 
         executeAction(item.action);
         executeAction(onChange);
+
+        if (dataType === "enum" && enumData) {
+            updateAttributeValue(enumData, item.id);
+        }
+    };
+
+    const options = {
+        ...(isFollow && { getPopupContainer: (trigger: { parentNode: any }) => trigger.parentNode })
     };
 
     return (
         <span className={props.class} style={{ display: "inline-block", ...style }} tabIndex={tabIndex}>
-            <Dropdown overlay={handleDom} trigger={trigger} placement={placement} arrow={arrow}>
+            <Dropdown overlay={handleDom} trigger={[trigger]} placement={placement} arrow={arrow} {...options}>
                 <a className="ant-dropdown-link display-block text-inherit" onClick={e => e.preventDefault()}>
                     {content}
                 </a>

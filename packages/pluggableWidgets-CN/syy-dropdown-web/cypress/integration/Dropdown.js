@@ -12,7 +12,7 @@ describe("Dropdown", () => {
         cy.visit("/p/TestE2E/Dropdown"); // resets page
     });
     it("render chidren content", () => {
-        cy.wait(1000);
+        cy.wait(100);
         const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
         dropdown.should("be.visible");
         dropdown.find("button").should("be.visible");
@@ -20,7 +20,7 @@ describe("Dropdown", () => {
 
     // General
     it("shows modal is clicked", () => {
-        cy.wait(1000);
+        cy.wait(100);
         const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
         dropdown.should("be.visible");
         dropdown.click();
@@ -29,7 +29,7 @@ describe("Dropdown", () => {
     });
 
     it("update return value", () => {
-        cy.wait(1000);
+        cy.wait(100);
         const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
         dropdown.should("be.visible");
         dropdown.click();
@@ -41,10 +41,42 @@ describe("Dropdown", () => {
     });
 
     // UI
+    it("shows arrow", () => {
+        cy.wait(100);
+        const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
+        dropdown.should("be.visible");
+        dropdown.click();
+        cy.wait(100);
+        cy.get(".ant-dropdown-arrow").should("be.visible");
+    });
+
+    it("placement is bottomRight", () => {
+        cy.wait(100);
+        const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
+        dropdown.click();
+        cy.wait(100);
+        cy.get(".ant-dropdown-placement-bottomRight").should("be.visible");
+    });
+
+    it("isfollow is true", () => {
+        cy.wait(100);
+        const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
+        dropdown.click();
+        cy.wait(100);
+        cy.get(".mx-name-sYYDropdownWeb1 .ant-dropdown").should("be.visible");
+    });
+
+    // it("isfollow is false", () => {
+    //     cy.wait(100);
+    //     const dropdown = cy.get(".mx-name-sYYDropdownWeb2");
+    //     dropdown.click();
+    //     cy.wait(100);
+    //     cy.get(".mx-name-sYYDropdownWeb2 .ant-dropdown").should("be.empty");
+    // });
 
     // Event
     it("shows modal is clicked call event", () => {
-        cy.wait(1000);
+        cy.wait(100);
         const dropdown = cy.get(".mx-name-sYYDropdownWeb1");
         dropdown.should("be.visible");
         dropdown.click();

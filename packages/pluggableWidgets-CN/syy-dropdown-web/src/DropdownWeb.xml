@@ -5,13 +5,21 @@
     <icon />
     <properties>
         <propertyGroup caption="General">
-            <property key="dataType" type="enumeration" defaultValue="dynamic">
+            <property key="dataType" type="enumeration" defaultValue="enum">
                 <caption>Data type</caption>
                 <description />
                 <enumerationValues>
+                    <enumerationValue key="enum">Enumeration</enumerationValue>
                     <enumerationValue key="dynamic">Dynamic</enumerationValue>
                     <enumerationValue key="static">Static</enumerationValue>
                 </enumerationValues>
+            </property>
+            <property key="enumData" type="attribute" required="false">
+                <caption>Enumeration</caption>
+                <description />
+                <attributeTypes>
+                    <attributeType name="Enum" />
+                </attributeTypes>
             </property>
             <property key="manualData" type="object" isList="true" required="false">
                 <caption>Static data</caption>
@@ -110,6 +118,10 @@
             <property key="divider" type="boolean" defaultValue="false">
                 <caption>Divider</caption>
                 <description />
+            </property>
+            <property key="isFollow" type="boolean" defaultValue="true">
+                <caption>IsFollow</caption>
+                <description>Whether the drop-down box is displayed in the parent container</description>
             </property>
         </propertyGroup>
         <propertyGroup caption="Events">
